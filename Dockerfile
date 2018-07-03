@@ -13,4 +13,4 @@ RUN set -xe && \
 
 VOLUME [ "/config" ]
 
-CMD [ "/srv/overture-linux-amd64" ]
+CMD [ "/srv/overture-linux-amd64", "-c", "/config/config.json" ]
