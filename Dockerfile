@@ -6,11 +6,11 @@ RUN set -xe && \
     mkdir /config && \
     apk add --no-cache unzip curl && \
     curl -fsSLO --compressed "https://github.com/shawn1m/overture/releases/download/${VERSION}/overture-linux-amd64.zip" && \
-    unzip -o "overture-linux-amd64.zip" -d /config && \
+    unzip -o "overture-linux-amd64.zip" -d /srv && \
     rm -rf "overture-linux-amd64.zip" && \
-    mv /config/overture-linux-amd64 /usr/bin/overture && \
+    cp /srv/config.json /config/ && \
     apk del unzip curl
 
-VOLUME [ "/config/" ]
+VOLUME [ "/config" ]
 
-CMD [ "/usr/bin/overture", "-c", "/config/config.json" ]
+CMD [ "/srv/overture-linux-amd64" ]
