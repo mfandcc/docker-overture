@@ -2,6 +2,8 @@ FROM alpine:3.7
 
 ENV VERSION 1.3.6.2
 
+WORKDIR /srv
+
 RUN set -xe && \
     mkdir /config && \
     apk add --no-cache unzip curl && \
