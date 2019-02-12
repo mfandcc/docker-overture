@@ -6,7 +6,7 @@ WORKDIR /srv
 
 RUN set -xe && \
     mkdir /config && \
-    apk add --no-cache unzip curl && \
+    apk add --no-cache unzip curl ca-certificates && \
     curl -fsSLO --compressed "https://github.com/shawn1m/overture/releases/download/${VERSION}/overture-linux-amd64.zip" && \
     unzip -o "overture-linux-amd64.zip" -d /srv && \
     rm -rf "overture-linux-amd64.zip" && \
