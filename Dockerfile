@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV VERSION v1.6.1
+ENV VERSION v1.7-rc1
 
 WORKDIR /srv
 
